@@ -1,4 +1,7 @@
 name: WGPlatesFlag
 version: '1.0.0'
 main: io.github.tanguygab.wGPlatesFlag.WGPlatesFlag
-api-version: '1.18'
+api-version: '1.21'
+depend: [WorldGuard]
+author: Tanguygab
+description: Adds a pressure-plates flag to control whether players can interact with pressure plates in regions
