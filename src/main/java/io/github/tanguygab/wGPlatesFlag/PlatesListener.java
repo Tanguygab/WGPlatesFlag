@@ -7,6 +7,7 @@ import com.sk89q.worldguard.bukkit.event.block.UseBlockEvent;
 import com.sk89q.worldguard.protection.flags.StateFlag;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -27,6 +28,6 @@ public class PlatesListener implements Listener {
         PlatesHandler handler = WorldGuard.getInstance().getPlatform().getSessionManager().get(player).getHandler(PlatesHandler.class);
 
         if (handler == null || handler.getPlates() == null) return;
-        event.setAllowed(handler.getPlates() == StateFlag.State.ALLOW);
+        event.setResult(handler.getPlates() == StateFlag.State.ALLOW ? Event.Result.ALLOW : Event.Result.DENY);
     }
 }
