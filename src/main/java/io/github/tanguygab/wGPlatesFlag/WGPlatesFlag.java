@@ -17,7 +17,7 @@ public final class WGPlatesFlag extends JavaPlugin {
     public void onLoad() {
         FlagRegistry registry = WorldGuard.getInstance().getFlagRegistry();
         try {
-            StateFlag flag = new StateFlag("pressure-plates", true);
+            StateFlag flag = new StateFlag("pressure-plates", false);
             registry.register(flag);
             PRESSURE_PLATES_FLAG = flag;
         } catch (FlagConflictException e) {
